@@ -5,9 +5,10 @@
 ║        Region Focus: Hyderabad & Rural Sindh, Pakistan                      ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 
-Author        : Principal Telecom Data Scientist
+Author        : Lokesh Kumar
+Role          : Lead Telecom Data Scientist
 Stack         : Streamlit · Folium · Plotly · Pandas · NumPy
-Last Updated  : 2025
+Last Updated  : 2026
 Description   : A production-grade interactive CAPEX planning and geospatial
                 coverage optimization tool for Telenor's Sindh network rollout.
                 All data is synthetically generated; no external DB required.
