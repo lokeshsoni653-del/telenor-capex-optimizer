@@ -1231,6 +1231,7 @@ def main() -> None:
         st.plotly_chart(chart_revenue_breakdown(fin), use_container_width=True)
 
         # 5-Year Financial Summary Table
+       # 5-Year Financial Summary Table
         with st.expander("📊 5-Year Financial Matrix Detail", expanded=False):
             fin_table = pd.DataFrame({
                 "Year":              [f"Year {y}" for y in fin["years"]],
@@ -1247,7 +1248,7 @@ def main() -> None:
             st.dataframe(
                 fin_table.style
                 .format(precision=2)
-                .applymap(
+                .map(
                     lambda v: "color: #00D68F" if isinstance(v, (int, float)) and v >= 0
                               else "color: #FF4D4D",
                     subset=["EBITDA (PKR M)", "NOPAT (PKR M)", "Free CF (PKR M)", "Cumulative CF (M)"],
