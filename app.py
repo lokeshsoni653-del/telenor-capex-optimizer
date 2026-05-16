@@ -1244,18 +1244,17 @@ def main() -> None:
                 "Subscribers":       fin["total_subs_y"],
                 "Network Util (%)":  fin["congestion_y"],
             })
-            st.dataframe(
-                fin_table.style
-                .format(precision=2)
-                .applymap(
-                    lambda v: "color: #00D68F" if isinstance(v, (int, float)) and v >= 0
-                              else "color: #FF4D4D",
-                    subset=["EBITDA (PKR M)", "NOPAT (PKR M)", "Free CF (PKR M)", "Cumulative CF (M)"],
-                ),
-                use_container_width=True,
-                hide_index=True,
-            )
-
+           st.dataframe(
+    fin_table.style
+    .format(precision=2)
+    .map(  # <--- Cleaned up for the new Pandas version
+        lambda v: "color: #00D68F" if isinstance(v, (int, float)) and v >= 0
+                  else "color: #FF4D4D",
+        subset=["EBITDA (PKR M)", "NOPAT (PKR M)", "Free CF (PKR M)", "Cumulative CF (M)"],
+    ),
+    use_container_width=True,
+    hide_index=True,
+)
         divider()
 
         # ══════════════════════════════════════════════════════════════════
