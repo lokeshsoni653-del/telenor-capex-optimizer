@@ -4,3 +4,4 @@ folium
 plotly
 pandas
 numpy
+matplotlib
